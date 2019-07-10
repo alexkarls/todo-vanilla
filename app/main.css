@@ -1,0 +1,86 @@
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #dddddd;
+}
+
+main * {
+  margin: 10px;
+}
+
+header {
+  text-align: center;
+  margin: 50px;
+  color: #000;
+}
+
+section {
+  text-align: center;
+}
+
+header h1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+header h2 {
+  text-transform: none;
+  letter-spacing: 1px;
+  font-weight: normal;
+}
+
+#todo-error-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+error-text {
+  display: block;
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+to-do-form {
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#todo-form-container {
+  width: 80%;
+  min-width: 300px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#todo-container {
+  width: 80%;
+  min-width: 300px;
+  max-width: 1000px;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+button {
+  width: 200px;
+  height: 75px;
+  margin: 20px;
+  background: #222;
+}
+
+button span {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: normal;
+  color: #fff;
+  transition-duration: 1s;
+}
+
+button:hover span {
+  letter-spacing: 5px;
+}
