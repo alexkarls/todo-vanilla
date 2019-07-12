@@ -16,6 +16,9 @@ const todoFormContainer = document.querySelector('#todo-form-container')
 const showTodoFormButton = document.querySelector('#todo-show-form')
 const errorTextContainer = document.querySelector('#todo-error-container')
 
+// Todo prepend/append in DOM, important to keep order in Storage since id not used...
+const PREPEND_TODO = true
+
 const fetch = () => {
   const todos = Storage.get(key)
   if (todos) {
@@ -61,7 +64,12 @@ const isValidInput = (input, min, max) => {
 const todoCheckedEvent = () => {
   todoContainer.addEventListener('todo-checked', event => {
     const todo = event.detail
-    Storage.deleteIndex('todo', [...todoContainer.children].indexOf(todo))
+    PREPEND_TODO
+      ? Storage.deleteIndex(
+          'todo',
+          [...todoContainer.children].reverse().indexOf(todo)
+        )
+      : Storage.deleteIndex('todo', [...todoContainer.children].indexOf(todo))
     todoContainer.removeChild(todo)
   })
 }
@@ -96,7 +104,7 @@ function append(model, save) {
     Storage.update('todo', model)
     clear(todoFormContainer)
   }
-  todoContainer.prepend(component)
+  todoContainer.append(component)
 }
 */
 
